@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "8dd85aee02e39dd280c75eef88ffdb86eed4b07b",
+        "version" : "5.6.2"
+      }
+    },
+    {
+      "identity" : "async-net",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/convenience-init/async-net",
+      "state" : {
+        "revision" : "945588bf18e4394b77ac4cd8e8eb6f7718b1e438",
+        "version" : "0.1.0-alpha"
+      }
+    },
+    {
+      "identity" : "i-do-declare",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/convenience-init/i-do-declare",
+      "state" : {
+        "revision" : "e4b3d696b2f405b185ad40a75f1a8390eb8566cf",
+        "version" : "0.1.0-alpha"
+      }
+    },
+    {
+      "identity" : "siesta",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bustoutsolutions/siesta",
+      "state" : {
+        "revision" : "43f34046ebb5beb6802200353c473af303bbc31e",
+        "version" : "1.5.2"
+      }
+    }
+  ],
+  "version" : 2
+}
