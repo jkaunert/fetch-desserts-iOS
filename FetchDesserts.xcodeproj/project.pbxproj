@@ -36,7 +36,6 @@
 		DC364EBE2907C658005138DA /* AsyncImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EBC2907C658005138DA /* AsyncImageCell.swift */; };
 		DC364EC12907C69F005138DA /* RecipeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */; };
 		DC364EC82907C7A3005138DA /* MealsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC42907C7A3005138DA /* MealsEndpoint.swift */; };
-		DC364EC92907C7A3005138DA /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC62907C7A3005138DA /* ImageService.swift */; };
 		DC364ECA2907C7A3005138DA /* MealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC72907C7A3005138DA /* MealsService.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +87,6 @@
 		DC364EBC2907C658005138DA /* AsyncImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageCell.swift; sourceTree = "<group>"; };
 		DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeScrollViewController.swift; sourceTree = "<group>"; };
 		DC364EC42907C7A3005138DA /* MealsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsEndpoint.swift; sourceTree = "<group>"; };
-		DC364EC62907C7A3005138DA /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		DC364EC72907C7A3005138DA /* MealsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,7 +262,6 @@
 		DC364EC52907C7A3005138DA /* services */ = {
 			isa = PBXGroup;
 			children = (
-				DC364EC62907C7A3005138DA /* ImageService.swift */,
 				DC364EC72907C7A3005138DA /* MealsService.swift */,
 			);
 			path = services;
@@ -417,7 +414,6 @@
 				DC364EBD2907C658005138DA /* TitleLabelReusableView.swift in Sources */,
 				DC364EA02907C270005138DA /* MealCollectionViewController.swift in Sources */,
 				DC344F4D2907163900C57AAA /* AppDelegate.swift in Sources */,
-				DC364EC92907C7A3005138DA /* ImageService.swift in Sources */,
 				DC364EAA2907C4C8005138DA /* UIViewController+AddChild.swift in Sources */,
 				DC364EC12907C69F005138DA /* RecipeScrollViewController.swift in Sources */,
 				DC364EC82907C7A3005138DA /* MealsEndpoint.swift in Sources */,
@@ -537,6 +533,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -590,6 +587,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -606,7 +604,6 @@
 				INFOPLIST_FILE = FetchDesserts/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -638,7 +635,6 @@
 				INFOPLIST_FILE = FetchDesserts/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
