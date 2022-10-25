@@ -32,6 +32,9 @@
 		DC364EB52907C57B005138DA /* mock_desserts_category_response.json in Resources */ = {isa = PBXBuildFile; fileRef = DC364EB22907C57B005138DA /* mock_desserts_category_response.json */; };
 		DC364EB92907C5FB005138DA /* String+Splitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EB72907C5FA005138DA /* String+Splitter.swift */; };
 		DC364EBA2907C5FB005138DA /* CustomStringConvertible+GenericDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EB82907C5FA005138DA /* CustomStringConvertible+GenericDescription.swift */; };
+		DC364EBD2907C658005138DA /* TitleLabelReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EBB2907C658005138DA /* TitleLabelReusableView.swift */; };
+		DC364EBE2907C658005138DA /* AsyncImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EBC2907C658005138DA /* AsyncImageCell.swift */; };
+		DC364EC12907C69F005138DA /* RecipeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		DC364EB22907C57B005138DA /* mock_desserts_category_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_desserts_category_response.json; sourceTree = "<group>"; };
 		DC364EB72907C5FA005138DA /* String+Splitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Splitter.swift"; sourceTree = "<group>"; };
 		DC364EB82907C5FA005138DA /* CustomStringConvertible+GenericDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomStringConvertible+GenericDescription.swift"; sourceTree = "<group>"; };
+		DC364EBB2907C658005138DA /* TitleLabelReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabelReusableView.swift; sourceTree = "<group>"; };
+		DC364EBC2907C658005138DA /* AsyncImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageCell.swift; sourceTree = "<group>"; };
+		DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 				DC344F4C2907163900C57AAA /* AppDelegate.swift */,
 				DC344F4E2907163900C57AAA /* SceneDelegate.swift */,
 				DC364EA32907C38E005138DA /* Models */,
+				DC364EBF2907C662005138DA /* Views */,
 				DC364E9C2907C233005138DA /* Controllers */,
 				DC364EA82907C47D005138DA /* Extensions */,
 				DC364E992907BE85005138DA /* CanvasPreviews */,
@@ -176,6 +183,7 @@
 				DC364E9D2907C266005138DA /* TabNavController.swift */,
 				DC364E9729072B10005138DA /* MainTabBarController.swift */,
 				DC364E9F2907C270005138DA /* MealCollectionViewController.swift */,
+				DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +226,15 @@
 				DC364EAC2907C4DF005138DA /* UICollectionView+Register.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		DC364EBF2907C662005138DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC364EBC2907C658005138DA /* AsyncImageCell.swift */,
+				DC364EBB2907C658005138DA /* TitleLabelReusableView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,10 +379,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC364EBE2907C658005138DA /* AsyncImageCell.swift in Sources */,
 				DC364E9B2907BE85005138DA /* UIKitPreviewView.swift in Sources */,
+				DC364EBD2907C658005138DA /* TitleLabelReusableView.swift in Sources */,
 				DC364EA02907C270005138DA /* MealCollectionViewController.swift in Sources */,
 				DC344F4D2907163900C57AAA /* AppDelegate.swift in Sources */,
 				DC364EAA2907C4C8005138DA /* UIViewController+AddChild.swift in Sources */,
+				DC364EC12907C69F005138DA /* RecipeScrollViewController.swift in Sources */,
 				DC364EBA2907C5FB005138DA /* CustomStringConvertible+GenericDescription.swift in Sources */,
 				DC344F4F2907163900C57AAA /* SceneDelegate.swift in Sources */,
 				DC364EA72907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift in Sources */,
