@@ -18,6 +18,10 @@
 		DC364E93290729FC005138DA /* iDoDeclare in Frameworks */ = {isa = PBXBuildFile; productRef = DC364E92290729FC005138DA /* iDoDeclare */; };
 		DC364E9629072A36005138DA /* AsyncNet in Frameworks */ = {isa = PBXBuildFile; productRef = DC364E9529072A36005138DA /* AsyncNet */; };
 		DC364E9829072B10005138DA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364E9729072B10005138DA /* MainTabBarController.swift */; };
+		DC364E9B2907BE85005138DA /* UIKitPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364E9A2907BE85005138DA /* UIKitPreviewView.swift */; };
+		DC364E9E2907C266005138DA /* TabNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364E9D2907C266005138DA /* TabNavController.swift */; };
+		DC364EA02907C270005138DA /* MealCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364E9F2907C270005138DA /* MealCollectionViewController.swift */; };
+		DC364EA22907C2B7005138DA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EA12907C2B7005138DA /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,10 @@
 		DC344F6D2907163A00C57AAA /* FetchDessertsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDessertsUITests.swift; sourceTree = "<group>"; };
 		DC344F6F2907163A00C57AAA /* FetchDessertsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDessertsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DC364E9729072B10005138DA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		DC364E9A2907BE85005138DA /* UIKitPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitPreviewView.swift; sourceTree = "<group>"; };
+		DC364E9D2907C266005138DA /* TabNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavController.swift; sourceTree = "<group>"; };
+		DC364E9F2907C270005138DA /* MealCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCollectionViewController.swift; sourceTree = "<group>"; };
+		DC364EA12907C2B7005138DA /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +113,12 @@
 			children = (
 				DC344F4C2907163900C57AAA /* AppDelegate.swift */,
 				DC344F4E2907163900C57AAA /* SceneDelegate.swift */,
-				DC364E9729072B10005138DA /* MainTabBarController.swift */,
+				DC364EA12907C2B7005138DA /* Models.swift */,
+				DC364E9C2907C233005138DA /* Controllers */,
 				DC344F552907163A00C57AAA /* Assets.xcassets */,
 				DC344F572907163A00C57AAA /* LaunchScreen.storyboard */,
 				DC344F5A2907163A00C57AAA /* Info.plist */,
+				DC364E992907BE85005138DA /* CanvasPreviews */,
 			);
 			path = FetchDesserts;
 			sourceTree = "<group>";
@@ -128,6 +138,24 @@
 				DC344F6F2907163A00C57AAA /* FetchDessertsUITestsLaunchTests.swift */,
 			);
 			path = FetchDessertsUITests;
+			sourceTree = "<group>";
+		};
+		DC364E992907BE85005138DA /* CanvasPreviews */ = {
+			isa = PBXGroup;
+			children = (
+				DC364E9A2907BE85005138DA /* UIKitPreviewView.swift */,
+			);
+			path = CanvasPreviews;
+			sourceTree = "<group>";
+		};
+		DC364E9C2907C233005138DA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC364E9D2907C266005138DA /* TabNavController.swift */,
+				DC364E9729072B10005138DA /* MainTabBarController.swift */,
+				DC364E9F2907C270005138DA /* MealCollectionViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC364E9B2907BE85005138DA /* UIKitPreviewView.swift in Sources */,
+				DC364EA02907C270005138DA /* MealCollectionViewController.swift in Sources */,
 				DC344F4D2907163900C57AAA /* AppDelegate.swift in Sources */,
 				DC344F4F2907163900C57AAA /* SceneDelegate.swift in Sources */,
+				DC364E9E2907C266005138DA /* TabNavController.swift in Sources */,
 				DC364E9829072B10005138DA /* MainTabBarController.swift in Sources */,
+				DC364EA22907C2B7005138DA /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
