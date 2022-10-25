@@ -5,6 +5,7 @@ typealias IngredientName = String
 typealias IngredientMeasure = String
 typealias RecipeStep = String
 
+//Namespace for Models
 enum Models {
 	enum MealCategories: String, CaseIterable {
 		case desserts = "Dessert"

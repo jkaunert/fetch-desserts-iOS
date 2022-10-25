@@ -22,6 +22,14 @@
 		DC364E9E2907C266005138DA /* TabNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364E9D2907C266005138DA /* TabNavController.swift */; };
 		DC364EA02907C270005138DA /* MealCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364E9F2907C270005138DA /* MealCollectionViewController.swift */; };
 		DC364EA22907C2B7005138DA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EA12907C2B7005138DA /* Models.swift */; };
+		DC364EA52907C3DE005138DA /* PreviewsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EA42907C3DE005138DA /* PreviewsMock.swift */; };
+		DC364EA72907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EA62907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift */; };
+		DC364EAA2907C4C8005138DA /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EA92907C4C8005138DA /* UIViewController+AddChild.swift */; };
+		DC364EAD2907C4DF005138DA /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EAB2907C4DF005138DA /* UICollectionView+Dequeue.swift */; };
+		DC364EAE2907C4DF005138DA /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EAC2907C4DF005138DA /* UICollectionView+Register.swift */; };
+		DC364EB32907C57B005138DA /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EB02907C57B005138DA /* Mockable.swift */; };
+		DC364EB42907C57B005138DA /* mock_dessert_response.json in Resources */ = {isa = PBXBuildFile; fileRef = DC364EB12907C57B005138DA /* mock_dessert_response.json */; };
+		DC364EB52907C57B005138DA /* mock_desserts_category_response.json in Resources */ = {isa = PBXBuildFile; fileRef = DC364EB22907C57B005138DA /* mock_desserts_category_response.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +66,14 @@
 		DC364E9D2907C266005138DA /* TabNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavController.swift; sourceTree = "<group>"; };
 		DC364E9F2907C270005138DA /* MealCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCollectionViewController.swift; sourceTree = "<group>"; };
 		DC364EA12907C2B7005138DA /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		DC364EA42907C3DE005138DA /* PreviewsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewsMock.swift; sourceTree = "<group>"; };
+		DC364EA62907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
+		DC364EA92907C4C8005138DA /* UIViewController+AddChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChild.swift"; sourceTree = "<group>"; };
+		DC364EAB2907C4DF005138DA /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
+		DC364EAC2907C4DF005138DA /* UICollectionView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
+		DC364EB02907C57B005138DA /* Mockable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		DC364EB12907C57B005138DA /* mock_dessert_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_dessert_response.json; sourceTree = "<group>"; };
+		DC364EB22907C57B005138DA /* mock_desserts_category_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_desserts_category_response.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +129,13 @@
 			children = (
 				DC344F4C2907163900C57AAA /* AppDelegate.swift */,
 				DC344F4E2907163900C57AAA /* SceneDelegate.swift */,
-				DC364EA12907C2B7005138DA /* Models.swift */,
+				DC364EA32907C38E005138DA /* Models */,
 				DC364E9C2907C233005138DA /* Controllers */,
+				DC364EA82907C47D005138DA /* Extensions */,
+				DC364E992907BE85005138DA /* CanvasPreviews */,
 				DC344F552907163A00C57AAA /* Assets.xcassets */,
 				DC344F572907163A00C57AAA /* LaunchScreen.storyboard */,
 				DC344F5A2907163A00C57AAA /* Info.plist */,
-				DC364E992907BE85005138DA /* CanvasPreviews */,
 			);
 			path = FetchDesserts;
 			sourceTree = "<group>";
@@ -127,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				DC344F632907163A00C57AAA /* FetchDessertsTests.swift */,
+				DC364EAF2907C57B005138DA /* mock */,
 			);
 			path = FetchDessertsTests;
 			sourceTree = "<group>";
@@ -156,6 +174,36 @@
 				DC364E9F2907C270005138DA /* MealCollectionViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC364EA32907C38E005138DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC364EA12907C2B7005138DA /* Models.swift */,
+				DC364EA42907C3DE005138DA /* PreviewsMock.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DC364EA82907C47D005138DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DC364EA62907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift */,
+				DC364EA92907C4C8005138DA /* UIViewController+AddChild.swift */,
+				DC364EAB2907C4DF005138DA /* UICollectionView+Dequeue.swift */,
+				DC364EAC2907C4DF005138DA /* UICollectionView+Register.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DC364EAF2907C57B005138DA /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				DC364EB02907C57B005138DA /* Mockable.swift */,
+				DC364EB12907C57B005138DA /* mock_dessert_response.json */,
+				DC364EB22907C57B005138DA /* mock_desserts_category_response.json */,
+			);
+			path = mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +329,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC364EB42907C57B005138DA /* mock_dessert_response.json in Resources */,
+				DC364EB52907C57B005138DA /* mock_desserts_category_response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,10 +351,15 @@
 				DC364E9B2907BE85005138DA /* UIKitPreviewView.swift in Sources */,
 				DC364EA02907C270005138DA /* MealCollectionViewController.swift in Sources */,
 				DC344F4D2907163900C57AAA /* AppDelegate.swift in Sources */,
+				DC364EAA2907C4C8005138DA /* UIViewController+AddChild.swift in Sources */,
 				DC344F4F2907163900C57AAA /* SceneDelegate.swift in Sources */,
+				DC364EA72907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift in Sources */,
+				DC364EA52907C3DE005138DA /* PreviewsMock.swift in Sources */,
 				DC364E9E2907C266005138DA /* TabNavController.swift in Sources */,
 				DC364E9829072B10005138DA /* MainTabBarController.swift in Sources */,
+				DC364EAD2907C4DF005138DA /* UICollectionView+Dequeue.swift in Sources */,
 				DC364EA22907C2B7005138DA /* Models.swift in Sources */,
+				DC364EAE2907C4DF005138DA /* UICollectionView+Register.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC344F642907163A00C57AAA /* FetchDessertsTests.swift in Sources */,
+				DC364EB32907C57B005138DA /* Mockable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
