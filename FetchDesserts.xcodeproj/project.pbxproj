@@ -35,6 +35,9 @@
 		DC364EBD2907C658005138DA /* TitleLabelReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EBB2907C658005138DA /* TitleLabelReusableView.swift */; };
 		DC364EBE2907C658005138DA /* AsyncImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EBC2907C658005138DA /* AsyncImageCell.swift */; };
 		DC364EC12907C69F005138DA /* RecipeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */; };
+		DC364EC82907C7A3005138DA /* MealsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC42907C7A3005138DA /* MealsEndpoint.swift */; };
+		DC364EC92907C7A3005138DA /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC62907C7A3005138DA /* ImageService.swift */; };
+		DC364ECA2907C7A3005138DA /* MealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC72907C7A3005138DA /* MealsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		DC364EBB2907C658005138DA /* TitleLabelReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabelReusableView.swift; sourceTree = "<group>"; };
 		DC364EBC2907C658005138DA /* AsyncImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageCell.swift; sourceTree = "<group>"; };
 		DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeScrollViewController.swift; sourceTree = "<group>"; };
+		DC364EC42907C7A3005138DA /* MealsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsEndpoint.swift; sourceTree = "<group>"; };
+		DC364EC62907C7A3005138DA /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		DC364EC72907C7A3005138DA /* MealsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,7 @@
 			children = (
 				DC344F4C2907163900C57AAA /* AppDelegate.swift */,
 				DC344F4E2907163900C57AAA /* SceneDelegate.swift */,
+				DC364EC22907C7A3005138DA /* Networking */,
 				DC364EA32907C38E005138DA /* Models */,
 				DC364EBF2907C662005138DA /* Views */,
 				DC364E9C2907C233005138DA /* Controllers */,
@@ -235,6 +242,32 @@
 				DC364EBB2907C658005138DA /* TitleLabelReusableView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DC364EC22907C7A3005138DA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DC364EC32907C7A3005138DA /* endpoints */,
+				DC364EC52907C7A3005138DA /* services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DC364EC32907C7A3005138DA /* endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				DC364EC42907C7A3005138DA /* MealsEndpoint.swift */,
+			);
+			path = endpoints;
+			sourceTree = "<group>";
+		};
+		DC364EC52907C7A3005138DA /* services */ = {
+			isa = PBXGroup;
+			children = (
+				DC364EC62907C7A3005138DA /* ImageService.swift */,
+				DC364EC72907C7A3005138DA /* MealsService.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,8 +417,10 @@
 				DC364EBD2907C658005138DA /* TitleLabelReusableView.swift in Sources */,
 				DC364EA02907C270005138DA /* MealCollectionViewController.swift in Sources */,
 				DC344F4D2907163900C57AAA /* AppDelegate.swift in Sources */,
+				DC364EC92907C7A3005138DA /* ImageService.swift in Sources */,
 				DC364EAA2907C4C8005138DA /* UIViewController+AddChild.swift in Sources */,
 				DC364EC12907C69F005138DA /* RecipeScrollViewController.swift in Sources */,
+				DC364EC82907C7A3005138DA /* MealsEndpoint.swift in Sources */,
 				DC364EBA2907C5FB005138DA /* CustomStringConvertible+GenericDescription.swift in Sources */,
 				DC344F4F2907163900C57AAA /* SceneDelegate.swift in Sources */,
 				DC364EA72907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift in Sources */,
@@ -393,6 +428,7 @@
 				DC364E9E2907C266005138DA /* TabNavController.swift in Sources */,
 				DC364E9829072B10005138DA /* MainTabBarController.swift in Sources */,
 				DC364EAD2907C4DF005138DA /* UICollectionView+Dequeue.swift in Sources */,
+				DC364ECA2907C7A3005138DA /* MealsService.swift in Sources */,
 				DC364EA22907C2B7005138DA /* Models.swift in Sources */,
 				DC364EAE2907C4DF005138DA /* UICollectionView+Register.swift in Sources */,
 				DC364EB92907C5FB005138DA /* String+Splitter.swift in Sources */,
