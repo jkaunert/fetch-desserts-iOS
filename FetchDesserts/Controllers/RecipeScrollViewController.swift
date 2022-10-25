@@ -1,10 +1,10 @@
 import UIKit
-import SiestaUI //Image Loading
 import iDoDeclare
 
 final class RecipeScrollViewController: UIViewController {
 	var viewModel: Models.Recipe!
-	
+	var image: UIImage!
+
 	let imageHeight: CGFloat = 300
 	let textFieldHeight: CGFloat = 40
 	let stackViewPadding: CGFloat = 20
@@ -46,10 +46,9 @@ final class RecipeScrollViewController: UIViewController {
 			)
 		}
 	
-	lazy var headerImage = RemoteImageView {
+	lazy var headerImage = UIImageView {
 		$0.frame = CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: imageHeight))
-		$0.imageURL = viewModel.imageURL
-		$0.placeholderImage = UIImage(named: "draw")
+		$0.image = self.image
 		$0.contentMode = .scaleAspectFill
 		$0.clipsToBounds = true
 	}
@@ -102,7 +101,7 @@ final class RecipeScrollViewController: UIViewController {
 			`Spacer`(),
 		]
 	}
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViews()

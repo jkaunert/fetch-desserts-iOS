@@ -37,6 +37,7 @@
 		DC364EC12907C69F005138DA /* RecipeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */; };
 		DC364EC82907C7A3005138DA /* MealsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC42907C7A3005138DA /* MealsEndpoint.swift */; };
 		DC364ECA2907C7A3005138DA /* MealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC72907C7A3005138DA /* MealsService.swift */; };
+		DCA8FE4529087367008063F0 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8FE4429087367008063F0 /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeScrollViewController.swift; sourceTree = "<group>"; };
 		DC364EC42907C7A3005138DA /* MealsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsEndpoint.swift; sourceTree = "<group>"; };
 		DC364EC72907C7A3005138DA /* MealsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsService.swift; sourceTree = "<group>"; };
+		DCA8FE4429087367008063F0 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				DC364EC72907C7A3005138DA /* MealsService.swift */,
+				DCA8FE4429087367008063F0 /* ImageService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				DC364EA72907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift in Sources */,
 				DC364EA52907C3DE005138DA /* PreviewsMock.swift in Sources */,
 				DC364E9E2907C266005138DA /* TabNavController.swift in Sources */,
+				DCA8FE4529087367008063F0 /* ImageService.swift in Sources */,
 				DC364E9829072B10005138DA /* MainTabBarController.swift in Sources */,
 				DC364EAD2907C4DF005138DA /* UICollectionView+Dequeue.swift in Sources */,
 				DC364ECA2907C7A3005138DA /* MealsService.swift in Sources */,

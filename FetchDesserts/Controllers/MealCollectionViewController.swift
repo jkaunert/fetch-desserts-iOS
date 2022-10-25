@@ -1,6 +1,5 @@
 import UIKit
 import AsyncNet
-import SiestaUI
 import iDoDeclare
 
 class MealCollectionViewController: UIViewController {
@@ -151,12 +150,16 @@ extension MealCollectionViewController: UICollectionViewDelegate {
 		
 		let dessert = desserts[indexPath.item]
 		
+		
 		Task(priority: .background) { @MainActor in
 			let recipe: Models.Recipe = try! await fetchRecipe(for: dessert)
 			//			print(recipe)
+			let image = await returnImage(imageUrl: recipe.imageURL)
+			
 			self.present(
 				RecipeScrollViewController {
 					$0.viewModel = recipe
+					$0.image = image
 				},
 				animated: true
 			)
@@ -164,6 +167,9 @@ extension MealCollectionViewController: UICollectionViewDelegate {
 		
 		collectionView.deselectItem(at: indexPath, animated: true)
 		
+	}
+	fileprivate func returnImage(imageUrl: String) async -> UIImage {
+		return try! await ImageService.shared.fetchImage(from: imageUrl)
 	}
 }
 

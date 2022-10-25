@@ -1,12 +1,11 @@
 import UIKit
-import SiestaUI
 import iDoDeclare
 
 final class AsyncImageCell: CollectionCellDequeueable {
 	
 	let spacing = CGFloat(10)
 	
-	lazy var imageView = RemoteImageView {
+	lazy var imageView = UIImageView {
 		$0.translatesAutoresizingMaskIntoConstraints = false
 		$0.layer.borderColor = UIColor.black.cgColor
 		$0.layer.borderWidth = 1
@@ -48,9 +47,15 @@ extension AsyncImageCell {
 		
 		titleLabel.text = title
 		categoryLabel.text = "Dessert"
-		imageView.imageURL = imageUrl
+		Task {
+			imageView.image = await returnImage(imageUrl: imageUrl)
+		}
 	}
-	//FIXME: -
+	
+	fileprivate func returnImage(imageUrl: String) async -> UIImage {
+		return try! await ImageService.shared.fetchImage(from: imageUrl)
+	}
+
 	fileprivate func applyConstraints() {
 		NSLayoutConstraint.activate([
 			// ImageView Contraints
