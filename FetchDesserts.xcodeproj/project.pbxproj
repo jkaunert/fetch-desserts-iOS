@@ -14,14 +14,12 @@
 		DC344F642907163A00C57AAA /* FetchDessertsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC344F632907163A00C57AAA /* FetchDessertsTests.swift */; };
 		DC344F6E2907163A00C57AAA /* FetchDessertsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC344F6D2907163A00C57AAA /* FetchDessertsUITests.swift */; };
 		DC344F702907163A00C57AAA /* FetchDessertsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC344F6F2907163A00C57AAA /* FetchDessertsUITestsLaunchTests.swift */; };
-		DC364E90290729A6005138DA /* SiestaUI in Frameworks */ = {isa = PBXBuildFile; productRef = DC364E8F290729A6005138DA /* SiestaUI */; };
 		DC364E93290729FC005138DA /* iDoDeclare in Frameworks */ = {isa = PBXBuildFile; productRef = DC364E92290729FC005138DA /* iDoDeclare */; };
-		DC364E9629072A36005138DA /* AsyncNet in Frameworks */ = {isa = PBXBuildFile; productRef = DC364E9529072A36005138DA /* AsyncNet */; };
 		DC364E9829072B10005138DA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364E9729072B10005138DA /* MainTabBarController.swift */; };
 		DC364E9B2907BE85005138DA /* UIKitPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364E9A2907BE85005138DA /* UIKitPreviewView.swift */; };
 		DC364E9E2907C266005138DA /* TabNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364E9D2907C266005138DA /* TabNavController.swift */; };
 		DC364EA02907C270005138DA /* MealCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364E9F2907C270005138DA /* MealCollectionViewController.swift */; };
-		DC364EA22907C2B7005138DA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EA12907C2B7005138DA /* Models.swift */; };
+		DC364EA22907C2B7005138DA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EA12907C2B7005138DA /* Model.swift */; };
 		DC364EA52907C3DE005138DA /* PreviewsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EA42907C3DE005138DA /* PreviewsMock.swift */; };
 		DC364EA72907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EA62907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift */; };
 		DC364EAA2907C4C8005138DA /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EA92907C4C8005138DA /* UIViewController+AddChild.swift */; };
@@ -37,7 +35,7 @@
 		DC364EC12907C69F005138DA /* RecipeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */; };
 		DC364EC82907C7A3005138DA /* MealsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC42907C7A3005138DA /* MealsEndpoint.swift */; };
 		DC364ECA2907C7A3005138DA /* MealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC364EC72907C7A3005138DA /* MealsService.swift */; };
-		DCA8FE4529087367008063F0 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8FE4429087367008063F0 /* ImageService.swift */; };
+		DCA8FE482908AC83008063F0 /* AsyncNet in Frameworks */ = {isa = PBXBuildFile; productRef = DCA8FE472908AC83008063F0 /* AsyncNet */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +71,7 @@
 		DC364E9A2907BE85005138DA /* UIKitPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitPreviewView.swift; sourceTree = "<group>"; };
 		DC364E9D2907C266005138DA /* TabNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavController.swift; sourceTree = "<group>"; };
 		DC364E9F2907C270005138DA /* MealCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCollectionViewController.swift; sourceTree = "<group>"; };
-		DC364EA12907C2B7005138DA /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		DC364EA12907C2B7005138DA /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DC364EA42907C3DE005138DA /* PreviewsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewsMock.swift; sourceTree = "<group>"; };
 		DC364EA62907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
 		DC364EA92907C4C8005138DA /* UIViewController+AddChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChild.swift"; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 		DC364EC02907C69F005138DA /* RecipeScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeScrollViewController.swift; sourceTree = "<group>"; };
 		DC364EC42907C7A3005138DA /* MealsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsEndpoint.swift; sourceTree = "<group>"; };
 		DC364EC72907C7A3005138DA /* MealsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsService.swift; sourceTree = "<group>"; };
-		DCA8FE4429087367008063F0 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC364E93290729FC005138DA /* iDoDeclare in Frameworks */,
-				DC364E90290729A6005138DA /* SiestaUI in Frameworks */,
-				DC364E9629072A36005138DA /* AsyncNet in Frameworks */,
+				DCA8FE482908AC83008063F0 /* AsyncNet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +175,7 @@
 		DC364E992907BE85005138DA /* CanvasPreviews */ = {
 			isa = PBXGroup;
 			children = (
+				DC364EA42907C3DE005138DA /* PreviewsMock.swift */,
 				DC364E9A2907BE85005138DA /* UIKitPreviewView.swift */,
 			);
 			path = CanvasPreviews;
@@ -198,8 +195,7 @@
 		DC364EA32907C38E005138DA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DC364EA12907C2B7005138DA /* Models.swift */,
-				DC364EA42907C3DE005138DA /* PreviewsMock.swift */,
+				DC364EA12907C2B7005138DA /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,8 +203,7 @@
 		DC364EA82907C47D005138DA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DC364EB82907C5FA005138DA /* CustomStringConvertible+GenericDescription.swift */,
-				DC364EB72907C5FA005138DA /* String+Splitter.swift */,
+				DCC973152908F3D100457660 /* Foundation */,
 				DC364EB62907C5CC005138DA /* UIKit */,
 			);
 			path = Extensions;
@@ -265,9 +260,17 @@
 			isa = PBXGroup;
 			children = (
 				DC364EC72907C7A3005138DA /* MealsService.swift */,
-				DCA8FE4429087367008063F0 /* ImageService.swift */,
 			);
 			path = services;
+			sourceTree = "<group>";
+		};
+		DCC973152908F3D100457660 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				DC364EB82907C5FA005138DA /* CustomStringConvertible+GenericDescription.swift */,
+				DC364EB72907C5FA005138DA /* String+Splitter.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +290,8 @@
 			);
 			name = FetchDesserts;
 			packageProductDependencies = (
-				DC364E8F290729A6005138DA /* SiestaUI */,
 				DC364E92290729FC005138DA /* iDoDeclare */,
-				DC364E9529072A36005138DA /* AsyncNet */,
+				DCA8FE472908AC83008063F0 /* AsyncNet */,
 			);
 			productName = FetchDesserts;
 			productReference = DC344F492907163900C57AAA /* FetchDesserts.app */;
@@ -364,9 +366,8 @@
 			);
 			mainGroup = DC344F402907163900C57AAA;
 			packageReferences = (
-				DC364E8E290729A6005138DA /* XCRemoteSwiftPackageReference "siesta" */,
 				DC364E91290729FC005138DA /* XCRemoteSwiftPackageReference "i-do-declare" */,
-				DC364E9429072A36005138DA /* XCRemoteSwiftPackageReference "async-net" */,
+				DCA8FE462908AC83008063F0 /* XCRemoteSwiftPackageReference "async-net" */,
 			);
 			productRefGroup = DC344F4A2907163900C57AAA /* Products */;
 			projectDirPath = "";
@@ -425,11 +426,10 @@
 				DC364EA72907C470005138DA /* UICollectionReusableView+ReuseIdentifier.swift in Sources */,
 				DC364EA52907C3DE005138DA /* PreviewsMock.swift in Sources */,
 				DC364E9E2907C266005138DA /* TabNavController.swift in Sources */,
-				DCA8FE4529087367008063F0 /* ImageService.swift in Sources */,
 				DC364E9829072B10005138DA /* MainTabBarController.swift in Sources */,
 				DC364EAD2907C4DF005138DA /* UICollectionView+Dequeue.swift in Sources */,
 				DC364ECA2907C7A3005138DA /* MealsService.swift in Sources */,
-				DC364EA22907C2B7005138DA /* Models.swift in Sources */,
+				DC364EA22907C2B7005138DA /* Model.swift in Sources */,
 				DC364EAE2907C4DF005138DA /* UICollectionView+Register.swift in Sources */,
 				DC364EB92907C5FB005138DA /* String+Splitter.swift in Sources */,
 			);
@@ -776,14 +776,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DC364E8E290729A6005138DA /* XCRemoteSwiftPackageReference "siesta" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/bustoutsolutions/siesta";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		DC364E91290729FC005138DA /* XCRemoteSwiftPackageReference "i-do-declare" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/convenience-init/i-do-declare";
@@ -792,30 +784,25 @@
 				version = "0.1.0-alpha";
 			};
 		};
-		DC364E9429072A36005138DA /* XCRemoteSwiftPackageReference "async-net" */ = {
+		DCA8FE462908AC83008063F0 /* XCRemoteSwiftPackageReference "async-net" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/convenience-init/async-net";
 			requirement = {
-				kind = exactVersion;
-				version = "0.1.0-alpha";
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DC364E8F290729A6005138DA /* SiestaUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC364E8E290729A6005138DA /* XCRemoteSwiftPackageReference "siesta" */;
-			productName = SiestaUI;
-		};
 		DC364E92290729FC005138DA /* iDoDeclare */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC364E91290729FC005138DA /* XCRemoteSwiftPackageReference "i-do-declare" */;
 			productName = iDoDeclare;
 		};
-		DC364E9529072A36005138DA /* AsyncNet */ = {
+		DCA8FE472908AC83008063F0 /* AsyncNet */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC364E9429072A36005138DA /* XCRemoteSwiftPackageReference "async-net" */;
+			package = DCA8FE462908AC83008063F0 /* XCRemoteSwiftPackageReference "async-net" */;
 			productName = AsyncNet;
 		};
 /* End XCSwiftPackageProductDependency section */
