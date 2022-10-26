@@ -35,14 +35,14 @@ final class FetchDessertsTests: XCTestCase {
 
 final class DessertServiceMock: Mockable, MealResponseServiceable, AsyncRequestable {
 	
-	typealias ResponseModel = Models.MealResponse
-	typealias DetailsResponseModel = Models.RecipeResponse
+	typealias ResponseModel = Model.MealResponse
+	typealias DetailsResponseModel = Model.RecipeResponse
 	
-	func getMeals(categoryName: String) async throws -> Models.MealResponse {
+	func getMeals(categoryName: String) async throws -> Model.MealResponse {
 		return loadJSON(filename: "mock_dessert_response", type: ResponseModel.self)
 	}
 	
-	func getMealDetails(mealId: String) async throws -> Models.RecipeResponse {
+	func getMealDetails(mealId: String) async throws -> Model.RecipeResponse {
 		return loadJSON(filename: "mock_desserts_category_response", type: DetailsResponseModel.self)
 		
 	}
