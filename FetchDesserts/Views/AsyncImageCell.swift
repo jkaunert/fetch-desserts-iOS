@@ -1,4 +1,5 @@
 import UIKit
+import AsyncNet
 import iDoDeclare
 
 final class AsyncImageCell: CollectionCellDequeueable {
@@ -29,12 +30,7 @@ final class AsyncImageCell: CollectionCellDequeueable {
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		
-		contentView.addSubview(imageView)
-		contentView.addSubview(titleLabel)
-		contentView.addSubview(categoryLabel)
-		
-		applyConstraints()
+		constrainViews()
 	}
 	
 	required init?(coder: NSCoder) {
@@ -55,8 +51,13 @@ extension AsyncImageCell {
 	fileprivate func returnImage(imageUrl: String) async -> UIImage {
 		return try! await ImageService.shared.fetchImage(from: imageUrl)
 	}
-
-	fileprivate func applyConstraints() {
+	
+	fileprivate func constrainViews() {
+		
+		contentView.addSubview(imageView)
+		contentView.addSubview(titleLabel)
+		contentView.addSubview(categoryLabel)
+		
 		NSLayoutConstraint.activate([
 			// ImageView Contraints
 			imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),

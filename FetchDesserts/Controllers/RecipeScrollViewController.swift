@@ -2,7 +2,7 @@ import UIKit
 import iDoDeclare
 
 final class RecipeScrollViewController: UIViewController {
-	var viewModel: Models.Recipe!
+	var viewModel: Model.Recipe!
 	var image: UIImage!
 
 	let imageHeight: CGFloat = 300
@@ -187,7 +187,7 @@ import SwiftUI
 struct RecipeScrollViewController_Previews: PreviewProvider {
 	static var previews: some View {
 		PreviewViewController(for: RecipeScrollViewController {
-			$0.viewModel = Models.Recipe().previewsRecipe
+			$0.viewModel = Model.Recipe().previewsRecipe
 		})
 		.environment(\.colorScheme, .dark)
 		.edgesIgnoringSafeArea(.all)

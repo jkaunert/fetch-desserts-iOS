@@ -6,26 +6,34 @@ typealias IngredientMeasure = String
 typealias RecipeStep = String
 
 //Namespace for Models
-enum Models {
-	enum MealCategories: String, CaseIterable {
+enum Model {
+	enum MealType: String, CaseIterable {
 		case desserts = "Dessert"
 	}
-	
+}
+
+extension Model {
 	struct MealResponse: Decodable, Hashable, AnyWithable {
 		var meals: [Meal] = []
 	}
-	
+}
+
+extension Model {
 	struct Meal: Decodable, Hashable, AnyWithable {
 		var id: String = ""
 		var name: String = ""
 		var imageURL: String = ""
 	}
-	
-	// Meal Details ("Recipe")
+}
+
+// Recipe AKA MealDetails
+extension Model {
 	struct RecipeResponse: Decodable, Hashable, AnyWithable {
 		var recipes: [Recipe] = []
 	}
-	
+}
+
+extension Model {
 	struct Recipe: Decodable, Hashable, AnyWithable {
 		var id: String = ""
 		var name: String = ""
@@ -34,7 +42,9 @@ enum Models {
 		var ingredients: [Ingredient] = []
 		var steps: [RecipeStep] = []
 	}
-	
+}
+
+extension Model {
 	struct Ingredient: Codable, Hashable, AnyWithable {
 		
 		var name: IngredientName = ""
@@ -45,43 +55,7 @@ enum Models {
 	}
 }
 
-extension Models.Meal {
-	enum CodingKeys: String, CodingKey {
-		case id = "idMeal",
-			 name = "strMeal",
-			 imageURL = "strMealThumb"
-	}
-}
-
-extension Models.RecipeResponse {
-	enum CodingKeys: String, CodingKey {
-		case recipes = "meals"
-	}
-}
-
-extension Models.Recipe {
-	enum CodingKeys: String, CodingKey {
-		case id = "idMeal",
-			 name = "strMeal",
-			 category = "strCategory",
-			 imageURL = "strMealThumb",
-			 steps
-	}
-	
-	enum InstructionsStepsCodingKeys: String, CodingKey {
-		case instructions = "strInstructions"
-	}
-	
-	enum IngredientNameCodingKeys: String, CodingKey, CaseIterable {
-		case strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10, strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15, strIngredient16, strIngredient17, strIngredient18, strIngredient19, strIngredient20
-	}
-	
-	enum IngredientMeasureCodingKeys: String, CodingKey, CaseIterable {
-		case strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10, strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15, strMeasure16, strMeasure17, strMeasure18, strMeasure19, strMeasure20
-	}
-}
-
-extension Models.Recipe {
+extension Model.Recipe {
 	
 	init(from decoder: Decoder) throws {
 		
@@ -109,10 +83,46 @@ extension Models.Recipe {
 			
 			if let name = name, let measure = measure,
 			   name.isNotEmpty() && measure.isNotEmpty() {
-				let ingredient = Models.Ingredient(name: name, measure: measure)
+				let ingredient = Model.Ingredient(name: name, measure: measure)
 				ingredients.append(ingredient)
 			}
 		}
+	}
+}
+
+extension Model.Meal {
+	enum CodingKeys: String, CodingKey {
+		case id = "idMeal",
+			 name = "strMeal",
+			 imageURL = "strMealThumb"
+	}
+}
+
+extension Model.RecipeResponse {
+	enum CodingKeys: String, CodingKey {
+		case recipes = "meals"
+	}
+}
+
+extension Model.Recipe {
+	enum CodingKeys: String, CodingKey {
+		case id = "idMeal",
+			 name = "strMeal",
+			 category = "strCategory",
+			 imageURL = "strMealThumb",
+			 steps
+	}
+	
+	enum InstructionsStepsCodingKeys: String, CodingKey {
+		case instructions = "strInstructions"
+	}
+	
+	enum IngredientNameCodingKeys: String, CodingKey, CaseIterable {
+		case strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10, strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15, strIngredient16, strIngredient17, strIngredient18, strIngredient19, strIngredient20
+	}
+	
+	enum IngredientMeasureCodingKeys: String, CodingKey, CaseIterable {
+		case strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10, strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15, strMeasure16, strMeasure17, strMeasure18, strMeasure19, strMeasure20
 	}
 }
 

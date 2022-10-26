@@ -4,18 +4,17 @@ import iDoDeclare
 
 class MealCollectionViewController: UIViewController {
 	
-	var collectionView: UICollectionView!
+	private(set) var response: Model.RecipeResponse?
 	
-	private(set) var response: Models.RecipeResponse?
-	private(set) var desserts: [Models.Meal] = []
+	private(set) var desserts: [Model.Meal] = []
+	
+	private(set) var layoutEnvironment: NSCollectionLayoutEnvironment?
 	
 	internal var mealService: any MealResponseServiceable = MealsService()
 	
-	static let titleElementKind = "title-element-kind"
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		configureCollectionView()
+		constrainCollectionView()
 		Task(priority: .background) {
 			try await loadData(category: "Dessert")
 		}
@@ -24,12 +23,60 @@ class MealCollectionViewController: UIViewController {
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 	}
+	
+	lazy var collectionView =  UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout()).with {
+		$0.translatesAutoresizingMaskIntoConstraints = false
+		$0.backgroundColor = .systemBackground
+		$0.register(cell: AsyncImageCell.self)
+		$0.register(header: TitleLabelSupplementaryView.self)
+		$0.delegate = self
+		$0.dataSource = self
+	}
+	
+	
+	lazy var group = NSCollectionLayoutGroup
+		.horizontal(
+			layoutSize: NSCollectionLayoutSize(
+				widthDimension: .fractionalWidth(
+					CGFloat(
+						(layoutEnvironment?.container.effectiveContentSize.width ?? 0) > 500 ? 0.425 : 0.85)
+				),
+				heightDimension: .absolute(250)
+			),
+			subitems:
+				[
+					NSCollectionLayoutItem(
+						layoutSize: NSCollectionLayoutSize(
+							widthDimension: .fractionalWidth(1.0),
+							heightDimension: .fractionalHeight(1.0)
+						)
+					)
+				]
+		)
+	
+	lazy var sectionProvider =
+	{ [unowned self] (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+		return section }
+	
+	lazy var section = NSCollectionLayoutSection(group: group).with {
+		$0.orthogonalScrollingBehavior = .continuous
+		
+		$0.interGroupSpacing = 20
+		
+		$0.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
+		
+		$0.boundarySupplementaryItems = [NSCollectionLayoutBoundarySupplementaryItem(
+			layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44)),
+			elementKind: TitleLabelSupplementaryView.reuseIdentifier,
+			alignment: .top)
+		]
+	}
 }
 
 //Fetch
 extension MealCollectionViewController {
 	
-	@MainActor func fetchRecipe(`for` mealItem: Models.Meal) async throws  -> Models.Recipe {
+	@MainActor func fetchRecipe(`for` mealItem: Model.Meal) async throws -> Model.Recipe {
 		do {
 			let recipe = try await mealService.getMealDetails(mealId: mealItem.id).recipes.first!
 			return recipe
@@ -40,12 +87,12 @@ extension MealCollectionViewController {
 		}
 	}
 	
-	func fetchData(category: String) async throws -> Models.MealResponse {
+	func fetchData(category: String) async throws -> Model.MealResponse {
 		do {
 			return try await mealService.getMeals(categoryName: category)
 		}
-		catch let error as NSError {
-			throw error
+		catch {
+			throw NetworkError.networkError(error)
 		}
 	}
 	
@@ -57,9 +104,9 @@ extension MealCollectionViewController {
 			
 			self.collectionView.reloadData()
 		}
-		catch let error as NetworkError {
+		catch {
 			
-			self.showModal(title: "Error", message: error.message())
+			self.showModal(title: "Error", message: "\(NetworkError.decodingError(error))")
 			throw error
 		}
 	}
@@ -78,62 +125,24 @@ extension MealCollectionViewController {
 				)
 			},
 			animated: true)
+		
 	}
 }
 
 //Compositional Layout
-//FIXME: -
 extension MealCollectionViewController {
 	fileprivate func createCompositionalLayout() -> UICollectionViewLayout {
-		let sectionProvider = { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-			let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-			let item = NSCollectionLayoutItem(layoutSize: itemSize)
-			
-			//"peeking" 3rd item
-			let groupFractionalWidth = CGFloat(layoutEnvironment.container.effectiveContentSize.width > 500 ? 0.425 : 0.85)
-			let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(groupFractionalWidth), heightDimension: .absolute(250))
-			let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-			
-			let section = NSCollectionLayoutSection(group: group)
-			section.orthogonalScrollingBehavior = .continuous
-			section.interGroupSpacing = 20
-			section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
-			
-			let titleSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
-			
-			let titleSupplementary = NSCollectionLayoutBoundarySupplementaryItem(
-				layoutSize: titleSize,
-				elementKind: MealCollectionViewController.titleElementKind,
-				alignment: .top)
-			section.boundarySupplementaryItems = [titleSupplementary]
-			return section
-		}
-		
-		let config = UICollectionViewCompositionalLayoutConfiguration()
-		config.interSectionSpacing = 20
-		
-		let layout = UICollectionViewCompositionalLayout(
-			sectionProvider: sectionProvider, configuration: config)
-		return layout
+		return UICollectionViewCompositionalLayout(
+			sectionProvider: sectionProvider, configuration: UICollectionViewCompositionalLayoutConfiguration { $0.interSectionSpacing = 20 }
+		)
 	}
 }
-// Configuration API
+
+//Add CollectionView + Constrain
 extension MealCollectionViewController {
-	func configureCollectionView() {
-		collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout())
-		
-		collectionView.translatesAutoresizingMaskIntoConstraints = false
-		
-		collectionView.backgroundColor = .systemBackground
-		
-		collectionView.register(cell: AsyncImageCell.self)
-		
-		collectionView.register(header: TitleLabelSupplementaryView.self)
-		
+	
+	func constrainCollectionView() {
 		view.addSubview(collectionView)
-		
-		collectionView.delegate = self
-		collectionView.dataSource = self
 		
 		NSLayoutConstraint.activate([
 			collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -150,10 +159,9 @@ extension MealCollectionViewController: UICollectionViewDelegate {
 		
 		let dessert = desserts[indexPath.item]
 		
-		
 		Task(priority: .background) { @MainActor in
-			let recipe: Models.Recipe = try! await fetchRecipe(for: dessert)
-			//			print(recipe)
+			let recipe: Model.Recipe = try! await fetchRecipe(for: dessert)
+			
 			let image = await returnImage(imageUrl: recipe.imageURL)
 			
 			self.present(
@@ -168,8 +176,31 @@ extension MealCollectionViewController: UICollectionViewDelegate {
 		collectionView.deselectItem(at: indexPath, animated: true)
 		
 	}
-	fileprivate func returnImage(imageUrl: String) async -> UIImage {
-		return try! await ImageService.shared.fetchImage(from: imageUrl)
+	
+	@MainActor func returnImage(imageUrl: String) async -> UIImage {
+		do {
+			let fetchedImage = try await ImageService.shared.fetchImage(from: imageUrl)
+			return fetchedImage
+		}
+		catch {
+			present(
+				UIAlertController(
+					title: "Error",
+					message: "Error fetching image from \(imageUrl)",
+					preferredStyle: .alert
+				)
+				.with {
+					$0.addAction(
+						UIAlertAction(
+							title: "Dismiss",
+							style: .cancel
+						) { _ in }
+					)
+				},
+				animated: true
+			)
+			return UIImage(named: "draw")! //default image
+		}
 	}
 }
 
@@ -177,7 +208,7 @@ extension MealCollectionViewController: UICollectionViewDelegate {
 extension MealCollectionViewController: UICollectionViewDataSource {
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
-		return Models.MealCategories.allCases.count
+		return Model.MealType.allCases.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -207,6 +238,8 @@ extension MealCollectionViewController: UICollectionViewDataSource {
 	}
 }
 
+extension UICollectionReusableView: SupplementaryViewDequeueable {}
+
 // UIKit Previews
 import SwiftUI
 struct MealCollectionViewController_Previews: PreviewProvider {
@@ -217,4 +250,3 @@ struct MealCollectionViewController_Previews: PreviewProvider {
 	}
 }
 
-extension UICollectionReusableView: SupplementaryViewDequeueable {}

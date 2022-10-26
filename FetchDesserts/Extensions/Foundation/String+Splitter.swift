@@ -14,7 +14,6 @@ extension String {
 			),
 			withTemplate: template
 		)
-		
 		return modifiedString?.components(separatedBy: template) ?? []
 	}
 }
